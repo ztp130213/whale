@@ -1,0 +1,73 @@
+<div class="bs-docs-section">
+  <h1 id="linehistogram" class="page-header">折柱混合图</h1>
+
+  <p class="lead">基于d3实现的折柱混合图</p>
+
+  <h2 id="linehistogram-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="linehistogram-example">
+    <div id="linehistogram-demo"></div>
+  </div>
+  {% highlight html %}
+  <div id="linehistogram-demo"></div>
+  {% endhighlight %}
+  {% highlight js %}
+    $('#linehistogram-demo').lineHistogram({
+      data: [
+        { x: 100, y: 200000, time: '2010-7-1' },
+        { x: 200, y: 800000, time: '2011-7-1' },
+        { x: 300, y: 600000, time: '2012-7-1' },
+        { x: 400, y: 400000, time: '2013-7-1' }
+      ],
+      xRange: [new Date(2009, 7, 1), new Date(2014, 7, 1)],
+      yLineRange: [0, 10e5],
+      yHistoRange: [0, 500],
+      lineKey: 'y',
+      histoKey: 'x',
+      lineLabel: 'y',
+      histoLabel: 'x',
+      lineLegend: 'y',
+      histoLegend: 'x'
+    })
+  {% endhighlight %}
+    <h3 id="linehistogram-options">参数</h3>
+    <p>标签云插件初始化时可以配置一些参数，以对象的形式传给whaleTagsCloud()</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped js-options-table">
+        <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width</td>
+            <td>Integer</td>
+            <td>718</td>
+            <td>画布宽度</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>Integer</td>
+            <td>600</td>
+            <td>画布高度</td>
+          </tr>
+          <tr>
+            <td>r</td>
+            <td>Integer</td>
+            <td>20</td>
+            <td>节点半径</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>图数据，见demo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

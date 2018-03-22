@@ -1,0 +1,15 @@
+<div class="bs-docs-section">
+  <h1 id="transitions" class="page-header">过渡效果 <small>transition.js</small></h1>
+
+  <h2>关于过渡效果</h2>
+  <p>对于简单的过渡效果，只需将 <code>transition.js</code> 和其它 JS 文件一起引入即可。如果你使用的是编译（或压缩）版的 <code>bootstrap.js</code> 文件，就无需再单独将其引入了。</p>
+
+  <h2>包含的内容</h2>
+  <p>Transition.js 是针对 <code>transitionEnd</code> 事件的一个基本辅助工具，也是对 CSS 过渡效果的模拟。它被其它插件用来检测当前浏览器对是否支持 CSS 的过渡效果。</p>
+
+  <h2>禁用过度效果</h2>
+  <p>通过下面的 JavaScript 代码可以在全局范围禁用过渡效果，并且必须将此代码放在 <code>transition.js</code> （或 <code>bootstrap.js</code> 或 <code>bootstrap.min.js</code>）后面，确保在 js 文件加载完毕后再执行下面的代码：</p>
+{% highlight js %}
+$.support.transition = false
+{% endhighlight %}
+</div>

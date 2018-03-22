@@ -1,0 +1,97 @@
+<div class="bs-docs-section">
+  <h1 id="force" class="page-header">力图</h1>
+
+  <p class="lead">基于d3实现的力图</p>
+
+  <h2 id="force-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="force-example">
+    <div id="force-demo"></div>
+  </div>
+  {% highlight html %}
+  <div id="force-demo"></div>
+  {% endhighlight %}
+  {% highlight js %}
+    var forceData = {
+      vertexes: [{
+        _id: 'Company/1',
+        name: 'a',
+      }, {
+        _id: 'Company/2',
+        name: 'bao sifjs iaod foia suh foi sudf hoiu'
+      }, {
+        _id: 'Person/3',
+        name: 'c'
+      }, {
+        _id: 'Company/4',
+        name: 'd'
+      }],
+      edges: [{
+        _id: 'Invest/1',
+        _from: 'Company/1',
+        _to: 'Company/2',
+        label: '投资1元'
+      }, {
+        _id: 'Invest/2',
+        _from: 'Company/2',
+        _to: 'Company/1',
+        label: '投资2元'
+      }, {
+        _id: 'Officer/3',
+        _from: 'Person/3',
+        _to: 'Company/1',
+        label: '董事'
+      }, {
+        _id: 'Invest/4',
+        _from: 'Company/2',
+        _to: 'Company/4',
+        label: '投资3元'
+      }]
+    }
+
+    $('#force-demo').force('init', {
+      data: forceData,
+      height: 300,
+    })
+  {% endhighlight %}
+    <h3 id="tagscloud-options">参数</h3>
+    <p>标签云插件初始化时可以配置一些参数，以对象的形式传给whaleTagsCloud()</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped js-options-table">
+        <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width</td>
+            <td>Integer</td>
+            <td>718</td>
+            <td>画布宽度</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>Integer</td>
+            <td>600</td>
+            <td>画布高度</td>
+          </tr>
+          <tr>
+            <td>r</td>
+            <td>Integer</td>
+            <td>20</td>
+            <td>节点半径</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>图数据，见demo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

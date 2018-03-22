@@ -1,0 +1,78 @@
+<div class="bs-docs-section">
+  <h1 id="datepicker" class="page-header">时间选择器
+    <small>whale/datepicker.js</small>
+  </h1>
+
+  <p>日期和时间选择器。</p>
+  <p>参考
+    <a href="https://github.com/fengyuanchen/datepicker" target="_blank">datepicker</a>
+  </p>
+
+  <h2 id="alerts-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="simple-alerts">
+    <div class="datepicker">
+      <input id="datetimepicker" data-toggle="datepicker" data-name="datetimepicker" />
+      <button type="button" id="datetimepickerTrigger" class="datepicker-trigger iconfont icon-calendar"></button>
+    </div>
+    <br />
+    <section class="datepicker-section">
+      <div class="datepicker">
+        <label>时间选择器1号</label>
+        <input data-toggle="datepicker" data-name="datepicker-no-1" />
+        <button type="button" class="datepicker-trigger iconfont icon-calendar">
+        </button>
+      </div>
+      <br />
+      <div class="datepicker">
+        <label>时间选择器2号</label>
+        <input data-toggle="datepicker" data-name="datepicker-no-2" />
+        <button type="button" class="datepicker-trigger iconfont icon-calendar">
+        </button>
+      </div>
+    </section>
+  </div>
+  {% highlight html %}
+  <div class="datepicker">
+    <input id="datetimepicker" data-toggle="datepicker" data-name="datetimepicker" />
+    <button type="button" id="datetimepickerTrigger" class="datepicker-trigger iconfont icon-calendar"></button>
+  </div>
+  <br />
+  <section class="datepicker-section">
+    <div class="datepicker">
+      <label>时间选择器1号</label>
+      <input data-toggle="datepicker" data-name="datepicker-no-1" />
+      <button type="button" class="datepicker-trigger iconfont icon-calendar">
+      </button>
+    </div>
+    <br />
+    <div class="datepicker">
+      <label>时间选择器2号</label>
+      <input data-toggle="datepicker" data-name="datepicker-no-2" />
+      <button type="button" class="datepicker-trigger iconfont icon-calendar">
+      </button>
+    </div>
+  </section>
+
+  <script>
+  $('.datepicker-section [data-toggle="datepicker"]').each(function (idx) {
+    $(this).datepicker({
+      trigger: $($('.datepicker-section .datepicker-trigger')[idx]),
+      format: 'YYYY-MM-DD',
+      autoHide: true
+    });
+  })
+  $('[data-toggle="datepicker"]').on('pick.datepicker', function (e) {
+    console.log(e.date);
+  });
+
+  $('#datetimepicker').datepicker({
+    showTime: true,
+    trigger: $('#datetimepickerTrigger'),
+    format: 'YYYY-MM-DD hh:mm:ss',
+    autoHide: true,
+    autoShow: true,
+    autoPick: true
+  });
+  </script> {% endhighlight %}
+</div>

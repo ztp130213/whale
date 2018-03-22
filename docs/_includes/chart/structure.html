@@ -1,0 +1,96 @@
+<div class="bs-docs-section">
+  <h1 id="structure" class="page-header">组织架构图</h1>
+
+  <p class="lead">基于d3实现的组织架构图</p>
+
+  <h2 id="alerts-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="structure-example">
+    <svg id="structure-demo" width="700" height="420"></svg>
+  </div>
+  {% highlight html %}
+    <svg id="structure-demo" width="700" height="420"></svg>
+  {% endhighlight %}
+  {% highlight js %}
+  var treeData = {
+    "name": "深圳市大疆创新科技有限公司",
+    "children": [
+    {
+        "name": "深圳市大疆无人机技术有限公司",
+        "value": "50.9%",
+        "extra": "大股东",
+    },
+    {
+        "name": "深圳市大疆灵眸技术有限公司",
+        "value": "50.9%",
+    },
+    {
+        "name": "深圳市大疆软件科技有限公司",
+        "value": "50.9%",
+        "children": [
+        {
+            "name": "Enos",
+            "value": "50.9%",
+        },
+        {
+            "name": "Noam",
+            "value": "0.9%",
+        }
+        ]
+    },
+    {
+        "name": "北京大疆文化传媒有限责任公司",
+        "value": "50.9%",
+        "children": [
+        {
+            "name": "Enos",
+            "value": "50.9%",
+        },
+        {
+            "name": "Noam",
+            "value": "50.9%",
+        }
+        ]
+    },
+    {
+        "name": "上海飞来科技有限公司",
+        "value": "0.9%",
+    },
+    {
+        "name": "深圳市大疆百旺科技有限公司",
+        "value": "0.9%",
+    }
+    ]
+}
+$('#structure-demo').structure({data: treeData});
+{% endhighlight %}
+    <h3 id="tagscloud-options">参数</h3>
+    <p>标签云插件初始化时可以配置一些参数，以对象的形式传给whaleTagsCloud()</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped js-options-table">
+        <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>图数据，见demo</td>
+          </tr>
+          <tr>
+            <td>isToggle</td>
+            <td>Boolean</td>
+            <td>false</td>
+            <td>是否需要展开收起功能</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.table-responsive -->
+</div>

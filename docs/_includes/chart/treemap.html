@@ -1,0 +1,67 @@
+<div class="bs-docs-section">
+  <h1 id="treemap" class="page-header">treemap</h1>
+
+  <p class="lead">基于d3实现的treemap</p>
+
+  <h2 id="treemap-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="treemap-example">
+    <div id="treemap-demo"></div>
+  </div>
+  {% highlight html %}
+  <div id="treemap-demo"></div>
+  {% endhighlight %}
+  {% highlight js %}
+    $.get('/assets/json/flare.json')
+      .then(function (data) {
+        $('#treemap-demo').treemap({
+          data: data,
+          width: 650,
+          height: 470,
+          onChangePath: function (path) {
+            console.log(path)
+          }
+        })
+    });
+  {% endhighlight %}
+    <h3 id="tagscloud-options">参数</h3>
+    <p>标签云插件初始化时可以配置一些参数，以对象的形式传给whaleTagsCloud()</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped js-options-table">
+        <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width</td>
+            <td>Integer</td>
+            <td>718</td>
+            <td>画布宽度</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>Integer</td>
+            <td>600</td>
+            <td>画布高度</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>图数据，见demo</td>
+          </tr>
+          <tr>
+            <td>onChangePath</td>
+            <td>function</td>
+            <td>undefined</td>
+            <td>改变方法</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

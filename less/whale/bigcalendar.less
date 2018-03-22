@@ -1,0 +1,225 @@
+.dot(@color) {
+  &::before {
+    content: '';
+    display: block;
+    float: left;
+    margin: 3px 10px 0 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: @color;
+  }
+}
+.calendar-area {
+    position: relative;
+    float: left;
+    width: 724px;
+    height: 617px;
+    background: #fff;
+    color: #767676;
+    .schedule-detail {
+        display: none;
+        position: absolute;
+        top: 20px;
+        padding: 10px 14px;
+        width: 200px;
+        height: 88px;
+        font-size: 12px;
+        color: #999;
+        background: #fff;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.13);
+        opacity: 0.9;
+        box-sizing: border-box;
+        .detail {
+            font-size: 14px;
+            color: #333;
+        }
+        .location .iconfont {
+            font-size: 12px;
+            margin-right: -4px;
+        }
+    }
+}
+
+.calendar-area {
+    .header-bar {
+        padding: 14px 12px 13px;
+        border-bottom: 1px solid #F0F2F3;
+        font-size: 12px;
+        .today {
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: bottom;
+            border-radius: 4px;
+            width: 42px;
+            height: 18px;
+            text-align: center;
+            line-height: 20px;
+            border: 1px solid #D1D1D1;
+        }
+        .day-week-year {
+            display: inline-block;
+            height: 20px;
+            font-size: 0;
+            span {
+                width: 44px;
+                display: inline-block;
+                line-height: 18px;
+                text-align: center;
+                font-size: 12px;
+                border: 1px solid #D1D1D1;
+                &+span {
+                    margin-left: -1px;
+                }
+                &:first-child {
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                }
+                &:last-child {
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                }
+                &.active {
+                    border-color: rgba(226, 85, 85, 0.5);
+                    background: rgba(226, 85, 85, 0.14);
+                }
+            }
+        }
+        span {
+            cursor: pointer;
+        }
+        .switch-month {
+            display: inline-block;
+            margin-left: 85px;
+            font-size: 14px;
+            color: #666;
+            i.iconfont {
+                cursor: pointer;
+            }
+        }
+        .toggle-btn {
+            float: right;
+            .iconfont {
+                cursor: pointer;
+                font-size: 24px;
+            }
+            .active {
+                color: #D24545;
+            }
+        }
+    }
+    .pane {
+        >.week-bar {
+            border-bottom: 1px solid #F0F2F3;
+            .week {
+                color: #666;
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 38px;
+                display: inline-block;
+                width: 13.5%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.calendar-wrapper {
+    .day-item {
+        float: left;
+        width: 92px;
+        height: 105px;
+        padding: 0 5px;
+        border-right: 1px solid #F0F2F3;
+        border-bottom: 1px solid #F0F2F3;
+        background-color: #fff;
+        &.row-last-item {
+            border-right: none;
+        }
+        .day {
+            font-size: 12px;
+            line-height: 28px;
+            text-align: right;
+            padding-right: 10px;
+            color: #666;
+            .today {
+                display: inline-block;
+                height: 14px;
+                min-width: 17px;
+                line-height: 14px;
+                text-align: center;
+                border-radius: 7px;
+                background-color: #E25555;
+                color: #fff;
+            }
+        }
+        .not-month-day {
+            color: #bdbdbd;
+        }
+        .schedule-container {
+            position: relative;
+            .schedule-title {
+                font-size: 12px;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #666;
+                white-space: nowrap;
+                &:hover {
+                    cursor: pointer;
+                    background: #E25555;
+                    color: #fff;
+                    &.green::before,
+                    &.blue::before,
+                    &.yellow::before,
+                    &::before {
+                        background: #fff;
+                    }
+                    &+.detail {
+                        display: block;
+                    }
+                }
+                .dot(#e25555);
+                &.green {
+                    .dot(#66C0B3);
+                }
+                &.blue {
+                    .dot(#95D9FD);
+                }
+                &.yellow {
+                    .dot(#FE931E);
+                }
+                &.green::before,
+                &.blue::before,
+                &.yellow::before,
+                &::before {
+                    margin: 5px 5px 0 1px;
+                }
+            }
+            .detail {
+                position: absolute;
+                margin-top: 2px;
+                padding: 10px;
+                width: 180px;
+                background: #fff;
+                font-size: 12px;
+                color: #999;
+                opacity: 0.9;
+                box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.13);
+                border-radius: 4px;
+                .content {
+                    font-size: 14px;
+                    color: #333;
+                }
+                .location .iconfont {
+                    font-size: 14px;
+                    margin-right: -2px;
+                }
+                &:hover {
+                    display: block;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

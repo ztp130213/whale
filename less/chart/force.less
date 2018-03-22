@@ -1,0 +1,73 @@
+svg.force {
+  font-size: 12px;
+  .node {
+    image {
+      cursor: pointer;
+    }
+    .circle {
+      fill: #fff;
+      stroke: #D4DADF;
+      stroke-width: 2px;
+    }
+    &.blur-node .circle {
+      fill: #fbfbfb;
+    }
+    &.blur-node {
+      &[node-type='Company_blacklist'] .circle {
+        stroke: #7a7a7a;
+      }
+      &[node-type='Company_graylist'] .circle {
+        stroke: #d6d6d6;
+      }
+    }
+  }
+  .node-name {
+    stroke: none;
+    fill: #44494F;
+    &.node-name-blur {
+      fill: #a3a9b0;
+    }
+  }
+  .link-name {
+    fill: #A3A9B0;
+    text-anchor: middle;
+    &.officer {
+      fill: #FFCEA2;
+    }
+    &.invest {
+      fill: #A9D9FF;
+    }
+  }
+  .arrow-marker {
+    fill: #C1C8CF;
+    &.invest,
+    &.shareholder {
+        fill: #A9D9FF;
+    }
+    &.officer {
+        fill: #FFCEA2;
+    }
+  }
+  .links {
+    cursor: default;
+    .clickable-link:hover {
+      cursor: pointer;
+    }
+  }
+  .link {
+    stroke: #C1C8CF;
+    fill: none;
+    &.officer {
+      stroke: #FFCEA2;
+    }
+    &.invest {
+      stroke: #A9D9FF;
+    }
+    &.link-highlight {
+      stroke-width: 2px;
+    }
+    &.link-dashed {
+      stroke-dasharray: 5, 5;
+    }
+  }
+}

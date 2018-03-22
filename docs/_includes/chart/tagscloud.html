@@ -1,0 +1,87 @@
+<div class="bs-docs-section">
+  <h1 id="tagscloud" class="page-header">标签云</h1>
+
+  <p class="lead">标签云的实现</p>
+
+  <h2 id="alerts-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="tagscloud-example">
+    <div id="tagscloud-demo"></div>
+  </div>
+  {% highlight html %}
+  <div id="tagscloud-demo"></div>
+  {% endhighlight %}
+  {% highlight js %}
+    var tagsAll = ['新能源汽车', '金融科技', '新零售', '智能投顾', '一带一路', '新三板', 'A轮', '上市公司', '外资企业', 'P2P', '创新企业', '个人独资', '合伙企业', '有限责任公司', '股份制公司', '集团公司', '指标性企业', '垄断性企业', '高风险企业', '效益依赖企业', '高负债经营企业', '银行类', '投资类',
+     '保险类', '信贷业务', '证券业务', '绿色金融', '大型国企', '人工智能', '无人超市', '出海企业', '互联网医疗'];
+    var tags = [];
+    for (var i = 0; i < tagsAll.length; i++) {
+      var item = { };
+      item.value = tagsAll[i];
+      item.href = "";
+      tags.push(item);
+    }
+    $( "#tagscloud-demo").whaleTagsCloud({tags: tags, width: 520, radiusX: 80, radiusY: 200, radiusZ: 80});
+  {% endhighlight %}
+    <h3 id="tagscloud-options">参数</h3>
+    <p>标签云插件初始化时可以配置一些参数，以对象的形式传给whaleTagsCloud()</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped js-options-table">
+        <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width</td>
+            <td>Integer</td>
+            <td>800</td>
+            <td>生成图宽度</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>Integer</td>
+            <td>260</td>
+            <td>生成图高度</td>
+          </tr>
+          <tr>
+            <td>tspeed</td>
+            <td>Integer</td>
+            <td>11</td>
+            <td>标签移动速度</td>
+          </tr>
+          <tr>
+            <td>tags</td>
+            <td>array</td>
+            <td>[]</td>
+            <td>
+              标签数据
+            </td>
+          </tr>
+          <tr>
+            <td>radiusX</td>
+            <td>Integer</td>
+            <td>90</td>
+            <td>竖轴半径</td>
+          </tr>
+          <tr>
+            <td>radiusY</td>
+            <td>Integer</td>
+            <td>135</td>
+            <td>横轴半径</td>
+          </tr>
+          <tr>
+            <td>radiusZ</td>
+            <td>Integer</td>
+            <td>90</td>
+            <td>z轴半径</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.table-responsive -->
+</div>

@@ -1,0 +1,101 @@
+<div class="bs-docs-section">
+  <h1 id="tree" class="page-header">目录树
+    <small>tree.js</small>
+  </h1>
+
+  <p>用清晰的层级结构展示信息，可展开或折叠。</p>
+
+  <h2 id="alerts-examples">基础用法</h2>
+  <p>基础的树形结构展示。</p>
+
+  <div class="bs-example" data-example-id="tree-example">
+      <div id="treeDemo"></div>
+  </div>
+{% highlight html %}
+  <div id="treeDemo"></div>
+{% endhighlight %}
+<div class="bs-example">
+    <div id="checkTreeDemo"></div>
+</div>
+    <div id="checkTreeDemo"></div>
+{% highlight html %}
+  <div id="checkTreeDemo"></div>
+  <script>
+    var setting = {
+      check: {
+        enable: true
+      },
+      expand: {
+        enable: true
+      },
+      class: 'new-css-style'
+    };
+    var zNodes = [{
+      name: '标签管理',
+      id: 1,
+      open: true, // 是否展开
+      checked: false, // 当setting内check的enable为true时起效
+      children: [{
+        name: '基本信息',
+        id: 11,
+        children: [{
+          name: '用户类型',
+          id: 111
+        }, {
+          name: '地理信息',
+          id: 112,
+          children: [{
+            name: '城市类型',
+            id: 1121
+          }, {
+            name: '行政区域',
+            id: 1122,
+            checked: true
+          }, {
+            name: '住所类型',
+            id: 1123,
+            children: [{
+              name: '小区',
+              id: 11231
+            }, {
+              name: '写字楼',
+              id: 11232,
+              open: true,
+              children: [{
+                name: '租金',
+                id: 112321,
+                class: '租金'
+              }]
+            }]
+          }]
+        }, {
+          name: '电视使用',
+          id: 113
+        }, {
+          name: '内容偏好',
+          id: 114
+        }]
+      }, {
+        name: '用户群管理',
+        id: 12,
+        children: [{
+          name: '经理管理',
+          id: 121
+        }]
+      }]
+    }, {
+      name: '内容管理',
+      id: 2,
+      open: true, // 是否展开
+      checked: false, // 当setting内check的enable为true时起效
+    }, {
+      name: '行情管理',
+      id: 3,
+      open: true, // 是否展开
+      checked: false, // 当setting内check的enable为true时起效
+    }];
+    $('#treeDemo').whaleTree('init', { data: zNodes });
+    $('#checkTreeDemo').whaleTree('init', { data: zNodes, setting: setting });
+  </script>
+{% endhighlight %}
+</div>

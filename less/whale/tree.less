@@ -1,0 +1,64 @@
+.whale-tree {
+	.item {
+		color: #696969;
+		font-size: 12px;
+		cursor: pointer;
+		padding: 10px 0;
+		user-select: none;
+		&.open {
+			.expand {
+				background-image: url(../../imgs/components/combine.png);
+			}
+		}
+		.expand {
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-image: url(../../imgs/components/expand.png);
+		}
+		.head-logo {
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-image: url(../../imgs/components/share-head.png);
+		}
+		&.parent {
+			&:hover {
+				.check-all {
+					display: inline-block
+				}
+			}
+		}
+		.check-box {
+			float: right;
+			width: 17px;
+			height: 17px;
+			display: inline-block;
+			background-size: contain;
+			background-repeat: no-repeat;
+			padding-right: 15px;
+			background-image: url(../../imgs/components/non-check.png);
+			&.checked {
+				background-image: url(../../imgs/components/check_focus.png);
+			}
+		}
+		.check-all {
+			float: right;
+			font-size: 12px;
+			color: #D24545;
+			padding-right: 15px;
+			cursor: pointer;
+			display: none;
+		}
+		&:hover, &.active {
+			background: rgba(56, 150, 248, .25);
+		}
+		&.hide {
+			display: none
+		}
+	}
+}

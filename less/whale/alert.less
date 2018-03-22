@@ -1,0 +1,108 @@
+@success-color: rgb(80, 188, 78);
+@warning-color: rgb(248, 196, 67);
+@danger-color: rgb(226, 85, 85);
+@info-color: rgb(79, 152, 234);
+
+.whale-alert {
+  width: 470px;
+  height: 76px;
+  padding: 18px 12px;
+  border-radius: 4px;
+  background: fadeout(@success-color, 30%);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  &.alert-warning {
+    background: fadeout(@warning-color, 30%);
+    &:hover {
+      background: @warning-color;
+    }
+  }
+  &.alert-danger {
+    background: fadeout(@danger-color, 30%);
+    &:hover {
+      background: @danger-color;
+    }
+  }
+  &.alert-info {
+    background: fadeout(@info-color, 30%);
+    &:hover {
+      background: @info-color;
+    }
+  }
+  &:hover, &.alert-success:hover {
+    background: @success-color;
+    opacity: 0.8;
+  }
+
+  &.alert-basic {
+    width: 350px;
+    height: 62px;
+    padding: 19px 12px;
+
+    p {
+      float: left;
+      padding: 5px 4px;
+      font-size: 14px;
+    }
+    .close .close-icon {
+      margin: 0;
+    }
+  }
+
+  .close .close-white-icon {
+    display: block;
+    margin: -5px -2px 0 0;
+    font-size: 24px;
+    color: #fff;
+  }
+  i.type-icon {
+    float: left;
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 40px;
+    color: #fff;
+  }
+
+  h4, p {
+    color: #fff;
+    font-weight: normal;
+  }
+  h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 14px;
+  }
+  p {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  h4, .msg {
+    display: inline-block;
+    white-space: nowrap;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &.alert-basic {
+    .msg {
+      max-width: 270px;
+    }
+    .close .close-white-icon {
+      margin: 0;
+    }
+  }
+  .no-more-alert {
+    float: right;
+    margin-right: 3px;
+    cursor: pointer;
+  }
+  .no-more-alert .checkbox {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    vertical-align: bottom;
+  }
+}

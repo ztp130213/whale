@@ -1,0 +1,82 @@
+<div class="bs-docs-section">
+  <h1 id="tree" class="page-header">树</h1>
+
+  <p class="lead">基于d3实现的树</p>
+
+  <h2 id="tree-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="tree-example">
+    <div id="tree-demo"></div>
+  </div>
+  {% highlight html %}
+  <div id="tree-demo"></div>
+  {% endhighlight %}
+  {% highlight js %}
+    var treeData1 =
+      {
+        "name": "Top Level",
+        "children": [
+          { "name": "Level 2: A" },
+          { "name": "Level 2: A" },
+          {
+            "name": "Level 2: A",
+            "children": [
+              { "name": "Son of A" },
+              { "name": "Daughter of A" }
+            ]
+          },
+          {
+            "name": "Level 2: B",
+            "children": [
+              { "name": "Son of B" },
+              { "name": "Daughter of B" }
+            ]
+          },
+          { "name": "Level 2: A" },
+          { "name": "Level 2: A" },
+        ]
+      };
+
+    $('#tree-demo').treeGraph(treeData1)
+  {% endhighlight %}
+    <h3 id="tree-options">参数</h3>
+    <p>标签云插件初始化时可以配置一些参数，以对象的形式传给whaleTagsCloud()</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped js-options-table">
+        <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width</td>
+            <td>Integer</td>
+            <td>718</td>
+            <td>画布宽度</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>Integer</td>
+            <td>600</td>
+            <td>画布高度</td>
+          </tr>
+          <tr>
+            <td>r</td>
+            <td>Integer</td>
+            <td>20</td>
+            <td>节点半径</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>图数据，见demo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

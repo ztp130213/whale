@@ -1,0 +1,37 @@
+<div class="bs-docs-section">
+	<h1 id="dropdown-selection" class="page-header">下拉单选
+		<small>whale/dropdown-selection.js</small>
+	</h1>
+  <p>下拉单选。</p>
+	<h2 id="alerts-examples">实例</h2>
+
+	<div class="bs-example" data-example-id="simple-alerts">
+      <div id="dropdown-selection-demo"></div>
+	</div>
+{% highlight html %}
+<div id="page" style="display:inline-block"></div>
+<div class="dropdown-selection-input-demo" style="display:inline-block"></div>
+<script>
+$('#dropdown-selection-demo').dropdownSelect('init', {
+  placeholder: '请选择',
+  data: [{
+    key: '1',
+    value: '选项1'
+  },
+  {
+    key: '2',
+    value: '选项2'
+  },
+  ]
+});
+$(".dropdown-selection-input-demo").whaleDropdownSelect({
+  width: 140,
+  data: [
+    { key: 1, value: '赵白' },
+    { key: 2, value: '钱生' },
+    { key: 3, value: '孙丽' },
+  ]
+});
+</script>
+{% endhighlight %}
+</div>

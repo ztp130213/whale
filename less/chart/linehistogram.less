@@ -1,0 +1,45 @@
+.line-histogram {
+  .bar {
+    fill: #E67373;
+  }
+
+  .line {
+    fill: none;
+    stroke: #4F98EA;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-width: 2px;
+  }
+  .dot {
+    fill: #4F98EA;
+  }
+  .y-label {
+    font-size: 12px;
+  }
+
+  .legend-group {
+    font-size: 12px;
+    g {
+      cursor: pointer;
+      user-select: none;
+    }
+    [link='histogram-group'] {
+      transform: translateX(-100px);
+      fill: #E67373;
+      circle.outer {
+        stroke: #E67373;
+        fill: none;
+      }
+    }
+    [link='line-group'] {
+      fill: #4F98EA;
+      circle.outer {
+        stroke: #4F98EA;
+        fill: none;
+      }
+    }
+    circle {
+      transform: translate(-12px, -5px);
+    }
+  }
+}

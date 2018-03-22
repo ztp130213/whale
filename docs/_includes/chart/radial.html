@@ -1,0 +1,70 @@
+<div class="bs-docs-section">
+  <h1 id="radial" class="page-header">雷达图</h1>
+
+  <p class="lead">基于d3实现的雷达图</p>
+
+  <h2 id="radial-examples">实例</h2>
+
+  <div class="bs-example" data-example-id="radial-example">
+    <div id="radial-demo"></div>
+  </div>
+  {% highlight html %}
+  <div id="radial-demo"></div>
+  {% endhighlight %}
+  {% highlight js %}
+    whaleRadial({
+      selector: '#radial-demo',
+      width: 160,
+      height: 160,
+      radius: 50,
+      data: {
+        fieldNames: ['注册', '营收', '存款', '融资', '结算'],
+        values: [
+          [80000, 20000, 30000, 40000, 50000]
+        ]
+      },
+      min: 0,
+      max: 100000,
+    })
+  {% endhighlight %}
+    <h3 id="radial-options">参数</h3>
+    <p>标签云插件初始化时可以配置一些参数，以对象的形式传给whaleTagsCloud()</p>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped js-options-table">
+        <thead>
+          <tr>
+            <th>参数名</th>
+            <th>类型</th>
+            <th>默认值</th>
+            <th>描述</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>width</td>
+            <td>Integer</td>
+            <td>718</td>
+            <td>画布宽度</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>Integer</td>
+            <td>600</td>
+            <td>画布高度</td>
+          </tr>
+          <tr>
+            <td>r</td>
+            <td>Integer</td>
+            <td>20</td>
+            <td>节点半径</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>Object</td>
+            <td>{}</td>
+            <td>图数据，见demo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

@@ -1,0 +1,203 @@
+<div class="bs-docs-section">
+  <h1 id="nav" class="page-header">导航</h1>
+
+  <p class="lead">Bootstrap 中的导航组件都依赖同一个<code>.nav</code>类，状态类也是共用的。改变修饰类可以改变样式。</p>
+
+  <div class="bs-callout bs-callout-info" id="callout-navs-tabs-plugin">
+    <h4>在标签页上使用导航需要依赖 JavaScript 标签页插件</h4>
+    <p>由于标签页需要控制内容区的展示，因此，你必须使用 <a href="../javascript/#tabs">标签页组件的 JavaScript 插件</a>。另外还要添加 <code>role</code> role 和 ARIA 属性 – 详细信息请参考该插件的 <a href="../javascript/#tabs-usage">实例</a> 。</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning" id="callout-navs-accessibility">
+    <h4>确保导航组件的可访问性</h4>
+    <p>如果你在使用导航组件实现导航条功能，务必在 <code>&lt;ul&gt;</code> 的最外侧的逻辑父元素上添加 <code>role="navigation"</code> 属性，或者用一个  <code>&lt;nav&gt;</code> 元素包裹整个导航组件。不要将 role 属性添加到 <code>&lt;ul&gt;</code> 上，因为这样可以被辅助设备（残疾人用的）上被识别为一个真正的列表。</p>
+  </div>
+
+  <h2 id="nav-tabs">导航</h2>
+  <p>注意 <code>.nav-tabs</code> 类依赖 <code>.nav</code> 基类。</p>
+  <div class="bs-example" data-example-id="simple-nav-tabs">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+{% endhighlight %}
+
+<div class="bs-example" data-example-id="simple-nav-tabs-1">
+  <ul class="nav nav-tabs-line">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Messages</a></li>
+  </ul>
+</div>
+{% highlight html %}
+<ul class="nav nav-tabs-line">
+<li role="presentation" class="active"><a href="#">Home</a></li>
+<li role="presentation"><a href="#">Profile</a></li>
+<li role="presentation"><a href="#">Messages</a></li>
+</ul>
+{% endhighlight %}
+
+  <h2 id="nav-pills">胶囊式标签页</h2>
+  <p>Take that same HTML, but use <code>.nav-pills</code> instead:</p>
+  <div class="bs-example" data-example-id="simple-nav-pills">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+{% endhighlight %}
+  <p>Pills are also vertically stackable. Just add <code>.nav-stacked</code>.</p>
+  <div class="bs-example" data-example-id="simple-nav-stacked">
+    <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-pills nav-stacked">
+  ...
+</ul>
+{% endhighlight %}
+
+
+  <h2 id="nav-justified">Justified</h2>
+  <p>Easily make tabs or pills equal widths of their parent at screens wider than 768px with <code>.nav-justified</code>. On smaller screens, the nav links are stacked.</p>
+  <p><strong class="text-danger">Justified navbar nav links are currently not supported.</strong></p>
+  <div class="bs-callout bs-callout-warning" id="callout-navs-justified-safari">
+    <h4>Safari and responsive justified navs</h4>
+    <p>As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing. This bug is also shown in the <a href="../examples/justified-nav/">justified nav example</a>.</p>
+  </div>
+  <div class="bs-example" data-example-id="simple-nav-justified">
+    <ul class="nav nav-tabs nav-justified">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+    <br>
+    <ul class="nav nav-pills nav-justified">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Profile</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-tabs nav-justified">
+  ...
+</ul>
+<ul class="nav nav-pills nav-justified">
+  ...
+</ul>
+{% endhighlight %}
+
+
+  <h2 id="nav-disabled-links">Disabled links</h2>
+  <p>For any nav component (tabs or pills), add <code>.disabled</code> for <strong>gray links and no hover effects</strong>.</p>
+
+  <div class="bs-callout bs-callout-warning" id="callout-navs-anchor-disabled">
+    <h4>Link functionality not impacted</h4>
+    <p>This class will only change the <code>&lt;a&gt;</code>'s appearance, not its functionality. Use custom JavaScript to disable links here.</p>
+  </div>
+
+  <div class="bs-example" data-example-id="disabled-nav-link">
+    <ul class="nav nav-pills">
+      <li role="presentation"><a href="#">Clickable link</a></li>
+      <li role="presentation"><a href="#">Clickable link</a></li>
+      <li role="presentation" class="disabled"><a href="#">Disabled link</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-pills">
+  ...
+  <li role="presentation" class="disabled"><a href="#">Disabled link</a></li>
+  ...
+</ul>
+{% endhighlight %}
+
+
+  <h2 id="nav-dropdowns">Using dropdowns</h2>
+  <p>Add dropdown menus with a little extra HTML and the <a href="../javascript/#dropdowns">dropdowns JavaScript plugin</a>.</p>
+
+  <h3>Tabs with dropdowns</h3>
+  <div class="bs-example" data-example-id="nav-tabs-with-dropdown">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Help</a></li>
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-tabs">
+  ...
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Dropdown <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+  </li>
+  ...
+</ul>
+{% endhighlight %}
+
+  <h3>Pills with dropdowns</h3>
+  <div class="bs-example" data-example-id="nav-pills-with-dropdown">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Help</a></li>
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Dropdown <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /example -->
+{% highlight html %}
+<ul class="nav nav-pills">
+  ...
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Dropdown <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+  </li>
+  ...
+</ul>
+{% endhighlight %}
+</div>
