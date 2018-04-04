@@ -1,5 +1,5 @@
 // 实现部分
-; (function ($) {
+;(function ($) {
   // 先序
   var eachBefore = function (callback) {
     var node = this, nodes = [node], children, i;
